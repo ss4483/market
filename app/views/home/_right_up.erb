@@ -1,0 +1,8 @@
+<a href="/market_enroll"><input type="submit" value="등록하기" ></a>
+
+<p><마켓 정보></p>
+  <% shorts.each do |s| %>
+      <div style="padding:5px; border:1px solid;">
+        <p><%= s.title%></p>
+      </div>
+  <% end %>

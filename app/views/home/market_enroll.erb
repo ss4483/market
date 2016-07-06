@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <%= render 'left' %>
+    </div>
+
+    <div class="col-md-6">
+      <p>마켓 등록</p>
+      <div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#short" aria-controls="short" role="tab" data-toggle="tab">기간 플리 마켓</a></li>
+          <li role="presentation"><a href="#long" aria-controls="long" role="tab" data-toggle="tab">정기 플리 마켓</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="short">
+            <form action="/short" method="POST">
+              <textarea name="title" style="width: 410px; height: 80px; vertical-align:bottom;"></textarea>
+              <input type="submit" value="글쓰기" >
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="long">
+            <form action="/long" method="POST">
+              <textarea name="title" style="width: 410px; height: 80px; vertical-align:bottom;"></textarea>
+              <input type="submit" value="글쓰기" >
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+    <div class="col-md-4" style="border-left:5px double">
+      <%= render partial: "right_up", locals: {shorts: @shorts}%>
+      <%= render partial: "right_down", locals: {longs: @longs}%>
+    </div>
+  </div>
+</div>

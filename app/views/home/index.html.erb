@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <%= render 'left' %>
+    </div>
+    <div class="col-md-6">
+      <div style="padding:5px; border:1px solid;">
+        <img class="_s0 _44ma img" src="https://scontent.xx.fbcdn.net/v/t1.0-1/c12.0.40.40/p40x40/10354686_10150004552801856_220367501106153455_n.jpg?oh=5c7e7ff32224d343a948ccb140e1499b&amp;oe=58320BF8" alt="" style="width:40px;height:40px">
+         <form action="/write" method="POST">
+           <input type="text" name="name">
+           <textarea name="content" style="width: 410px; height: 80px; vertical-align:bottom;"></textarea>
+           <input type="submit" value="글쓰기" >
+         </form>
+      </div>
+      <% @posts.each do |p| %>
+        <div style="padding:5px; border:1px solid;">
+            <p><%= p.name %> : <%= p.content %></p>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-4" style="border-left:5px double">
+      <%= render partial: "right_up", locals: {shorts: @shorts}%>
+      <%= render partial: "right_down", locals: {longs: @longs}%>
+    </div>
+  </div>
+</div>
