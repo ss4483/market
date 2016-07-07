@@ -4,14 +4,18 @@
       <%= render 'left' %>
     </div>
     <div class="col-md-6">
+      
+     <% if user_signed_in? %>
       <div style="padding:5px; border:1px solid;">
         <img class="_s0 _44ma img" src="https://scontent.xx.fbcdn.net/v/t1.0-1/c12.0.40.40/p40x40/10354686_10150004552801856_220367501106153455_n.jpg?oh=5c7e7ff32224d343a948ccb140e1499b&amp;oe=58320BF8" alt="" style="width:40px;height:40px">
          <form action="/write" method="POST">
-           <input type="text" name="name">
+           <input type="text" name="name" value="<%=current_user.email%>">
            <textarea name="content" style="width: 410px; height: 80px; vertical-align:bottom;"></textarea>
            <input type="submit" value="글쓰기" >
          </form>
       </div>
+    <% end %>
+      
       <% @posts.each do |p| %>
         <div style="padding:5px; border:1px solid;">
             <p><%= p.name %> : <%= p.content %></p>

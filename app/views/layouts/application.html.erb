@@ -22,13 +22,16 @@
     <div class="col-md-4" style="padding-top:45px;">
       <input type="text" name="fname" placeholder="검색하기" ><input type="submit" value="Submit">
     </div>
-    <div class="col-md-3"  style="padding-top:15px;">
-      <p>ID  </p>
-      <input type="text" name="lname">
-    </div>
-    <div class="col-md-3"  style="padding-top:15px;">
-      <p>Password </p>
-      <input type="text" name="lname"> <input type="submit" value="로그인">
+
+    <div class="col-md-3"  style="padding-top:45px;">
+      <% if user_signed_in? %>
+        <%= current_user.email %>
+        <a href="/users/sign_out">로그아웃</a>
+      <% else %>
+        <a href="/users/sign_in">로그인</a>
+        <a href="/users/sign_up">회원가입</a>
+      <% end %>
+        
     </div>
   <hr>
 </div>

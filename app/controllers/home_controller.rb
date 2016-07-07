@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     @posts = Post.all.reverse
     @shorts = Short.all.reverse
     @longs = Long.all.reverse
-
+      
   end
   def write
     post = Post.new(name: params[:name], content: params[:content])
